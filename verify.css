@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:#07132d;
+    position:relative;
+}
+
+/* Animated Gradient */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    background:linear-gradient(
+        135deg,
+        #081229,
+        #182848,
+        #2b5876,
+        #4e54c8
+    );
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Floating Blobs */
+
+.background span{
+    position:absolute;
+    display:block;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:.5;
+    animation:float 20s linear infinite;
+}
+
+.background span:nth-child(1){
+    width:320px;
+    height:320px;
+    background:#00d4ff;
+    left:-80px;
+    top:-80px;
+}
+
+.background span:nth-child(2){
+    width:420px;
+    height:420px;
+    background:#7c3aed;
+    right:-120px;
+    top:20%;
+    animation-duration:25s;
+}
+
+.background span:nth-child(3){
+    width:280px;
+    height:280px;
+    background:#4f46e5;
+    bottom:-80px;
+    left:20%;
+    animation-duration:18s;
+}
+
+.background span:nth-child(4){
+    width:350px;
+    height:350px;
+    background:#06b6d4;
+    bottom:-100px;
+    right:15%;
+    animation-duration:30s;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0) translateX(0) scale(1);
+    }
+
+    25%{
+        transform:translateY(-60px) translateX(50px) scale(1.1);
+    }
+
+    50%{
+        transform:translateY(40px) translateX(-40px) scale(.9);
+    }
+
+    75%{
+        transform:translateY(-20px) translateX(60px) scale(1.05);
+    }
+
+    100%{
+        transform:translateY(0) translateX(0) scale(1);
+    }
+
+}
+
+/* Glass Card */
+
+.container{
+    position:relative;
+    z-index:10;
+    width:400px;
+    padding:40px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.2);
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+.container h2{
+    color:white;
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.container input{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:10px;
+    background:rgba(255,255,255,.18);
+    color:white;
+    outline:none;
+}
+
+.container input::placeholder{
+    color:#eee;
+}
+
+.container button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(90deg,#3b82f6,#7c3aed);
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.container button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+}

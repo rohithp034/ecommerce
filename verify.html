@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+
+    <link rel="stylesheet" href="verify.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@6.3.15/dist/amazon-cognito-identity.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Verification Card -->
+    <div class="container">
+
+        <h2>Verify Your Email</h2>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email">
+
+        <input
+            type="text"
+            id="code"
+            placeholder="Enter verification code">
+
+        <button onclick="verifyUser()">
+            Verify Account
+        </button>
+
+    </div>
+
+    <script src="verify.js"></script>
+
+</body>
+
+</html>
